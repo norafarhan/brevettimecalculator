@@ -1,0 +1,30 @@
+services:
+  mongodb:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+
+  laptop-service:
+    build: ./laptop
+    volumes:
+      - ./laptop:/usr/src/app
+    ports:
+      - "5050:80"
+    depends_on:
+      - mongodb
+    networks:
+      - default
+      - proj5-mongo_default
+
+  website:
+    image: php:apache
+    volumes:
+      - ./website:/var/www/html
+    ports:
+      - "5002:80"
+    depends_on:
+      - laptop-service
+
+networks:
+  proj5-mongo_default:
+    external: true
