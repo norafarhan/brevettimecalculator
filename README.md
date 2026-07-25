@@ -1,29 +1,94 @@
-# Brevet Time Calculator REST API
+# Brevet Time REST API
 
-**Author:** Nora Farhan  
-**Email:** noraf@uoregon.edu
+A REST API that provides brevet control opening and closing times stored in MongoDB. Users can request data in either JSON or CSV format.
 
-## Overview
-REST API service that exposes brevet control times stored in MongoDB.
+---
 
-## Endpoints
+## Table of Contents
 
-- `GET /listAll` — returns all open and close times (JSON default)
-- `GET /listOpenOnly` — returns open times only
-- `GET /listCloseOnly` — returns close times only
+- Features
+- How It Works
+- Why I Built It
+- Technology Used
+- Installation
+- API Endpoints
+- Usage
+- Future Improvements
 
-## Formats
-Append `/json` or `/csv` to any endpoint:
-- `GET /listAll/json`
-- `GET /listAll/csv`
+---
 
-## Query Parameter
-Append `?top=k` to get the top k results in ascending order:
-- `GET /listOpenOnly/json?top=3`
-- `GET /listCloseOnly/csv?top=2`
+## Features
 
-## How to Run
-docker-compose up --build
+- REST API built with Flask
+- MongoDB database
+- JSON and CSV responses
+- Query parameter support
+- Docker deployment
 
-- REST API available at: http://localhost:5050
-- Website available at: http://localhost:5002
+---
+
+## How It Works
+
+1. Brevet control times are stored in MongoDB.
+2. The Flask API retrieves requested data.
+3. Results are returned in JSON or CSV.
+4. Users can limit results using query parameters.
+
+---
+
+## Why I Built It
+
+This project helped me learn how to design REST APIs, work with databases, and build backend applications using Flask.
+
+---
+
+## Technology Used
+
+### Backend
+- Python
+- Flask
+
+### Database
+- MongoDB
+
+### Tools
+- Docker
+- Git
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/YOUR_USERNAME/brevet-time-api.git
+cd brevet-time-api
+docker compose up --build
+```
+
+---
+
+## API Endpoints
+
+- `/listAll`
+- `/listOpenOnly`
+- `/listCloseOnly`
+
+Available formats:
+
+- JSON
+- CSV
+
+---
+
+## Usage
+
+Run the application and access the API using the available endpoints.
+
+---
+
+## Future Improvements
+
+- Better frontend
+- API documentation
+- Authentication
+- Additional filtering
