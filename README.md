@@ -1,4 +1,4 @@
-# Project 6: Brevet Time Calculator REST API
+# Brevet Time Calculator REST API
 
 **Author:** Nora Farhan  
 **Email:** noraf@uoregon.edu
